@@ -1,0 +1,30 @@
+## Interface: 30300
+## Title: |cFFFFD700Gold|r|cFFAAAAAAGP|r
+## Notes: Gold/GP Loot System for sirus.su (WoW 3.3.5a) — современная замена EPGP
+## Author: Custom (based on EPGP 5.5.15 analysis)
+## Version: 2.8.6
+## SavedVariables: GoldGPDB
+## X-Category: Guild
+## X-Website: https://sirus.su
+## X-Description: Переработанный EPGP с тёмным UI, журналом и окном настроек. Проверка настоев — отдельный аддон GoldGP_Flask.
+
+# v2.8.2 (КРИТИЧЕСКИЙ ФИКС порядка загрузки): НИКОГДА не объявлять модули
+# GoldGP_Flask/GoldGP_LootMaster в OptionalDeps ЭТОГО аддона — они сами
+# зависят от ядра (Dependencies/OptionalDeps в своих .toc), и обратные рёбра
+# образуют ЦИКЛ. На клиентах, где загрузчик разрешает цикл в пользу
+# optional-ребра, модули стартуют РАНЬШЕ ядра и молча отключаются на
+# "if not Addon then return end" (репорт v2.8.1: пропали фласки и настройки
+# LootMaster). Порядок обеспечивают .toc самих модулей.
+
+GoldGP_Core.lua
+GoldGP_UIKit.lua
+GoldGP_Log.lua
+GoldGP_Storage.lua
+GoldGP_Award.lua
+GoldGP_Announce.lua
+GoldGP_History.lua
+GoldGP_Options.lua
+GoldGP_UI.lua
+GoldGP_Welcome.lua
+GoldGP_Dialog.lua
+GoldGP_Slash.lua

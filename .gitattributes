@@ -1,0 +1,11 @@
+# Нормализация окончаний строк: везде LF (WoW-клиент и luaparse так любят)
+* text=auto eol=lf
+
+# Текстовые файлы аддона
+*.lua text eol=lf
+*.toc text eol=lf
+*.md text eol=lf
+
+# Бинарные файлы — не трогать
+*.png binary
+*.zip binary

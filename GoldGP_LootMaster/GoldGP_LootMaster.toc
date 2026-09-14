@@ -1,0 +1,22 @@
+## Interface: 30300
+## Title: |cFFFFD700Gold|r|cFFAAAAAAGP|r LootMaster
+## Notes: Распределение лута с начислением GP через GoldGP (WoW 3.3.5a, sirus.su)
+## Author: Custom
+## Version: 0.7.4
+## SavedVariables: GoldGPLMDB
+## Dependencies: GoldGP
+## X-Category: Raid, Guild
+## X-Website: https://sirus.su
+## X-Description: Упрощённый лутмастер для аддона GoldGP. Фазы 1-5: протокол, GP, клиент, ML, таблица.
+
+# v0.7.4 (ФИКС порядка загрузки): зависимость от ядра стала ЖЁСТКОЙ
+# (Dependencies вместо OptionalDeps) — без ядра LootMaster бесполезен, а
+# soft-ребро на кастом-клиентах может не обеспечить порядок (репорт v2.8.1).
+# v0.3.9: ChatThrottleLib должен загружаться ПЕРВЫМ (до main файла)
+ChatThrottleLib.lua
+GoldGP_LootMaster.lua
+GoldGP_LootMaster_Client.lua
+GoldGP_LootMaster_ML.lua
+# v0.4.2: GoldGP_LootMaster_Perf.lua удалён (мониторинг нагрузки больше не нужен)
+# v0.4.0: настройки через Blizzard Interface Options
+GoldGP_LootMaster_Options.lua

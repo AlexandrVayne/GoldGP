@@ -1,0 +1,18 @@
+## Interface: 30300
+## Title: |cFFFFD700Gold|r|cFFAAAAAAGP|r Фласки
+## Notes: Проверка настоев в группе/рейде и начисление GP за их отсутствие (модуль для офицеров, WoW 3.3.5a)
+## Author: Custom
+## Version: 0.1.2
+## SavedVariables: GoldGPFlaskDB
+## Dependencies: GoldGP
+## X-Category: Guild
+## X-Website: https://sirus.su
+## X-Description: Модуль проверки настоев поверх GoldGP. Ставится ТОЛЬКО офицерам — вкладка «Настои» и кнопка «Фласки» появляются в ядре автоматически при его наличии.
+
+# Ядро модуля (логика проверки + очередь начисления)
+# v0.1.2: отложенная инициализация — если ядро ещё не создало глобаль GoldGP
+# (нарушенный порядок загрузки на кастом-клиентах), модуль ЖДЁТ его появления
+# вместо молчаливого выхода.
+GoldGP_Flask.lua
+# Вкладка «Настои» в Blizzard Interface Options (собственная категория)
+GoldGP_Flask_Options.lua
